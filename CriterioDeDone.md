@@ -1,4 +1,4 @@
-Criterio de done
+Criterio de DONE
 
 - Todos lo criterios de aceptación cumplidos
 

@@ -1,0 +1,81 @@
+html{
+    font-family: 'Inter', sans-serif;
+}
+
+body h1{
+    font-size: 40px;
+}
+
+body p, body span, body input{
+    font-size: 16px;
+}
+body a, body label{
+    font-size: 20px;
+}
+
+body p{
+    color: #2F2E41;
+}
+body a{
+    color: #6C63FF;
+}
+
+button:active{
+    background-color: #6C63FF;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+}
+
+.container{
+    margin-top: 5%;
+    grid-area: 1 / 1 / 2 / 2; 
+}
+
+#contenedor{
+    margin-top: 5%;
+    grid-area: 2 / 1 / 3 / 2;
+    height: 90%;
+    box-shadow: 2px 9px 28px 0px rgba(61,56,56,0.75);
+    -webkit-box-shadow: 2px 9px 28px 0px rgba(61,56,56,0.75);
+    border-radius: 30px;
+}
+
+#parSel{
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#opciones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+#medicos, #especialidad, #obraSocial{
+    border-radius: 10px;
+    width: 30%;
+    font-size: 16px;
+}
+
+#parTurnos, select{
+    background-color: #C4C4C4;
+}
+
+#parTurnos{
+    margin-top: 5%;
+    width: 90%;
+    border-radius: 10px;
+    margin-left: 5%;
+}
+
+#parTurnos p{
+    margin-left: 2%;
+}

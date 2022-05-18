@@ -1,12 +1,13 @@
 html{
     font-family: 'Inter', sans-serif;
+    overflow: hidden;
 }
 
 body h1{
     font-size: 40px;
 }
 
-body p, body span, body input{
+body p, body span, body input, body button{
     font-size: 16px;
 }
 body a, body label{
@@ -21,7 +22,7 @@ body a{
 }
 
 button:active{
-    background-color: #6C63FF;
+    background-color: #FF6584;
 }
 
 body{
@@ -29,7 +30,8 @@ body{
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 0px;
-    grid-row-gap: 0px; 
+    grid-row-gap: 0px;
+    width: 100%;
 }
 
 .container{
@@ -66,7 +68,7 @@ body{
 }
 
 #parTurnos, select{
-    background-color: #C4C4C4;
+    background-color: #E8E8E8;
 }
 
 #parTurnos{
@@ -78,4 +80,31 @@ body{
 
 #parTurnos p{
     margin-left: 2%;
+}
+
+footer{
+    margin: 0;
+    width: 100%;
+    height: 5%;
+    position: absolute;
+    bottom: 10%;
+}
+
+body button{
+    background-color: #6C63FF;
+    border-radius: 50px;
+    color: white;
+    height: 50px;
+    width: 185px;
+    float: right;
+}
+.container .boton{
+    margin: 0;
+    margin-top: 1%;
+}
+#turnoSpan{
+    color: #FF6584;
+}
+#facilSpan{
+    color: #6C63FF;
 }

@@ -5,19 +5,112 @@ let medicos = [
         "id" : 1,
         "apellido" : "Perez",
         "nombre" : "Romina",
-        "especialidad" : "Traumatologia" 
+        "especialidad" : "Traumatologia",
+        "turnos": [
+            {
+             "dia": "Lunes 1 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            },
+            {
+             "dia": "Martes 2 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            },
+            {
+             "dia": "Miercoles 3 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            },
+            {
+             "dia": "Jueves 4 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            },
+            {
+             "dia": "Viernes 5 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            }]
     },
     {
         "id" : 2, 
         "apellido" : "Gonzales",
         "nombre" : "Jorgelina",
-        "especialidad" : "Clinica" 
+        "especialidad" : "Clinica",
+        "turnos": [
+            {
+             "dia": "Lunes 1 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            },
+            {
+             "dia": "Martes 2 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            },
+            {
+             "dia": "Miercoles 3 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            },
+            {
+             "dia": "Jueves 4 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            },
+            {
+             "dia": "Viernes 5 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            }]
     },
     {
         "id" : 3, 
         "apellido" : "Anchorena",
         "nombre" : "Marisol",
-        "especialidad" : "Cirugia nuclear" 
+        "especialidad" : "Cirugia nuclear",
+        "turnos": [
+            {
+             "dia": "Lunes 1 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            },
+            {
+             "dia": "Martes 2 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            },
+            {
+             "dia": "Miercoles 3 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            },
+            {
+             "dia": "Jueves 4 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            },
+            {
+             "dia": "Viernes 5 de Junio",
+             "hora1": "8.15",
+             "hora2": "8.30",
+             "hora3": "8.45"
+            }]
     }
 ];
 
@@ -51,4 +144,37 @@ especialidades.forEach(especialidad => {
 
 
 
-
+cargarMedicos();
+function cargarMedicos() {  //Renderiza totalidad de medicos en la pagina inicial
+        let contenedor = document.querySelector(".cartaMedica");
+            contenedor.innerHTML="";
+            for (let medico of medicos) {
+               contenedor.innerHTML += `<div>
+                                            <div class="contenedor-medic"> ${medico.nombre}, ${medico.apellido}
+                                            <div>${medico.especialidad} </div>
+                                            </div>
+                                             
+                                             <div class="turnos" id="turnos${medico.id}" >
+                                              
+                                             </div>
+                                         </div>
+               
+               `
+               
+               let contenedorTurnos = document.querySelector(`#turnos${medico.id}`);
+               contenedorTurnos.innerHTML="";
+               for (let turno of medico.turnos) {
+                contenedorTurnos.innerHTML+=` <div> <p class="btn btn-light"> ${turno.dia} </p> 
+                
+                                                    <p class="btn btn-light"> ${turno.hora1} </p>
+                                                    <p class="btn btn-light"> ${turno.hora2} </p>
+                                                    <p class="btn btn-light"> ${turno.hora3} </p>
+                
+                                            </div>`
+            }                               
+            
+            
+        
+        }
+    
+}

@@ -273,7 +273,7 @@ function cargarMedicos() {
                                                         <div class="horario" data-turno="${medico.id}, ${medico.apellido} ${medico.nombre}, ${turno.dia}, ${turno.hora2}">
                                                             <p>${turno.hora2} </p>
                                                         </div>
-                                                        <div class="horario" data-turno="${medico.id}, ${medico.apellido} ${medico.nombre}, ${turno.dia}, ${turno.hora1}">
+                                                        <div class="horario" data-turno="${medico.id}, ${medico.apellido} ${medico.nombre}, ${turno.dia}, ${turno.hora3}">
                                                             <p> ${turno.hora3}</p>
                                                         </div>                
                                                   </div>`

@@ -193,6 +193,7 @@ function cargarMedicos() {  //Renderiza totalidad de medicos en la pagina inicia
     
 }
 
+//Filtro por médico
 nodoMedico.addEventListener("change", resp => {
     let id = resp.target.value;
     let medicosFiltrado = medicos.filter( medico => medico.id == id );
@@ -200,6 +201,7 @@ nodoMedico.addEventListener("change", resp => {
     cargarMedicos();
 });
 
+//Filtro por especialidad
 nodoEspec.addEventListener("change", resp => {
     let especialidad = resp.target.value;
     let medicosFiltrado = medicos.filter( medico => medico.especialidad == especialidad );
@@ -207,9 +209,17 @@ nodoEspec.addEventListener("change", resp => {
     cargarMedicos();
 });
 
+//Filtro por obra social
 nodoOS.addEventListener("change", resp => {
     let obraSocial = resp.target.value;
     let medicosFiltrado = medicos.filter( medico => medico.obrasSociales.includes(obraSocial) );
     medicosSelecionados = medicosFiltrado;
     cargarMedicos();
-})
+});
+
+//Remover filtro
+document.querySelector("#btn-quitar_filtros").addEventListener("click", () => {
+    medicosSelecionados = medicos;
+    cargarMedicos();
+});
+

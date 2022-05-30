@@ -6,6 +6,13 @@ let medicos = [
         "apellido" : "Perez",
         "nombre" : "Romina",
         "especialidad" : "Traumatologia",
+        "obrasSociales" : [
+            "pami",
+            "osde",
+            "osecac",
+            "ioma",
+            "medicus"
+        ],
         "turnos": [
             {
              "dia": "Lunes 1 de Junio",
@@ -43,6 +50,11 @@ let medicos = [
         "apellido" : "Gonzales",
         "nombre" : "Jorgelina",
         "especialidad" : "Clinica",
+        "obrasSociales" : [
+            "pami",
+            "osde",
+            "medicus"
+        ],
         "turnos": [
             {
              "dia": "Lunes 1 de Junio",
@@ -80,6 +92,7 @@ let medicos = [
         "apellido" : "Anchorena",
         "nombre" : "Marisol",
         "especialidad" : "Cirugia nuclear",
+        "obrasSociales" : [],
         "turnos": [
             {
              "dia": "Lunes 1 de Junio",
@@ -117,12 +130,13 @@ let medicos = [
 let obras_sociales = ["pami", "osde", "osecac", "ioma", "medicus"];
 
 let especialidades = ["Traumatologia", "Clinica", "Cirugia nuclear"];
+let medicosSelecionados = medicos;
 
 let nodoMedico = document.querySelector("#medicos");
 medicos.forEach(medico => {
     let option = document.createElement("option");
     nodoMedico.appendChild(option);
-    option.value = medico;
+    option.value = medico.id;
     option.text = `${medico.apellido}, ${medico.nombre}`;
 });
 
@@ -148,7 +162,7 @@ cargarMedicos();
 function cargarMedicos() {  //Renderiza totalidad de medicos en la pagina inicial
         let contenedor = document.querySelector(".cartaMedica");
             contenedor.innerHTML="";
-            for (let medico of medicos) {
+            for (let medico of medicosSelecionados) {
                contenedor.innerHTML += `<div>
                                             <div class="contenedor-medic"> ${medico.nombre}, ${medico.apellido}
                                             <div>${medico.especialidad} </div>
@@ -178,3 +192,24 @@ function cargarMedicos() {  //Renderiza totalidad de medicos en la pagina inicia
         }
     
 }
+
+nodoMedico.addEventListener("change", resp => {
+    let id = resp.target.value;
+    let medicosFiltrado = medicos.filter( medico => medico.id == id );
+    medicosSelecionados = medicosFiltrado;
+    cargarMedicos();
+});
+
+nodoEspec.addEventListener("change", resp => {
+    let especialidad = resp.target.value;
+    let medicosFiltrado = medicos.filter( medico => medico.especialidad == especialidad );
+    medicosSelecionados = medicosFiltrado;
+    cargarMedicos();
+});
+
+nodoOS.addEventListener("change", resp => {
+    let obraSocial = resp.target.value;
+    let medicosFiltrado = medicos.filter( medico => medico.obrasSociales.includes(obraSocial) );
+    medicosSelecionados = medicosFiltrado;
+    cargarMedicos();
+})

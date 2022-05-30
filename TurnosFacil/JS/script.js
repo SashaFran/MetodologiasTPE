@@ -133,6 +133,7 @@ let medicos = [
 let obras_sociales = ["pami", "osde", "osecac", "ioma", "medicus"];
 let especialidades = ["Traumatologia", "Clinica", "Cirugia nuclear"];
 let medicosSelecionados = medicos;
+
 let nodoMedico = document.querySelector("#medicos");
 let nodoOS = document.querySelector("#obraSocial");
 let nodoEspec = document.querySelector("#especialidad");
@@ -280,7 +281,6 @@ function cargarMedicos() {
         }
 }
 
-
 window.onload = () => {
     cargarSelects();
     cargarMedicos();
@@ -356,6 +356,3 @@ function showModal(msg, turno) {
 function guardarTurno(turno) {
     console.log("guardado");
 }
-
-
-

@@ -1,0 +1,59 @@
+[
+        {   
+            "id" : 0,
+            "nombre":"romina",
+            "apellido":"perez",
+            "edad":30,
+            "especialidad":"traumotologia",
+            "obrasSociales":["pami","osde","osecac","ioma","medicus"],
+            "turnos": 
+                [
+                    {
+                        "dia": "lunes",
+                        "horarios":["8:15","10:30","11:30","15:00"]
+                    },
+                    {
+                        "dia": "martes",
+                        "horarios":["8:15","10:30","11:30","15:00"]
+                    }
+                ]    
+        },
+        {   
+            "id" : 1,
+            "nombre":"jorgelina",
+            "apellido":"gonzales",
+            "edad":71,
+            "especialidad":"clinica",
+            "obrasSociales":["osde","ioma"],
+            "turnos": 
+                [
+                    {
+                        "dia": "lunes",
+                        "horarios":["8:15","10:30","11:30","15:00"]
+                    },
+                    {
+                        "dia": "martes",
+                        "horarios":["8:15","10:30","11:30","15:00"]
+                    }
+                ]    
+        },
+        {   
+            "id" : 2,
+            "nombre":"marisol",
+            "apellido":"anchorena",
+            "edad":21,
+            "especialidad":"cirujia nuclear",
+            "obrasSociales":[],
+            "turnos": 
+                [
+                    {
+                        "dia": "lunes",
+                        "horarios":["8:15","10:30","11:30","15:00"]
+                    },
+                    {
+                        "dia": "martes",
+                        "horarios":["8:15","10:30","11:30","15:00"]
+                    }
+                ]    
+        } 
+] 

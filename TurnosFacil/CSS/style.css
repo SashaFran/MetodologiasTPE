@@ -1,6 +1,5 @@
 html{
     font-family: 'Inter', sans-serif;
-    
 }
 
 body h1{
@@ -17,21 +16,19 @@ body a, body label{
 body p{
     color: #2F2E41;
 }
+
 body a{
     color: #6C63FF;
 }
 
-button:active{
+
+button:active {
     background-color: #FF6584;
 }
 
 body{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .container{
@@ -41,45 +38,38 @@ body{
 
 #contenedor{
     margin-top: 5%;
-    grid-area: 2 / 1 / 3 / 2;
     height: 90%;
     box-shadow: 2px 9px 28px 0px rgba(61,56,56,0.75);
     -webkit-box-shadow: 2px 9px 28px 0px rgba(61,56,56,0.75);
     border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #parSel{
     text-align: center;
     padding-top: 2%;
-    padding-bottom: 2%;
+    /* padding-bottom: 2%; */
+    padding-bottom: .5%;
 }
 
-#opciones{
+#opciones {
     display: flex;
     flex-direction: row;
+    width: 100%;
     justify-content: space-evenly;
-    
 }
 
-#medicos, #especialidad, #obraSocial{
+#medicos, #especialidad, #obraSocial {
     border-radius: 10px;
     width: 30%;
-    font-size: 16px;
+    font-size: .6rem;
 }
 
-#parTurnos, select{
+select {
     background-color: #E8E8E8;
-}
-
-#parTurnos{
-    margin-top: 5%;
-    width: 90%;
-    border-radius: 10px;
-    margin-left: 5%;
-}
-
-#parTurnos p{
-    margin-left: 2%;
 }
 
 footer{
@@ -87,39 +77,132 @@ footer{
     width: 100%;
     height: 5%;
     bottom: 10%;
-    text-align: center;
 }
 
 body button{
     background-color: #6C63FF;
     border-radius: 50px;
     color: white;
-    height: 50px;
-    width: 185px;
+    height: 3em;
+    width: 10em;
     float: right;
+    margin: .5em;
 }
+
 .container .boton{
     margin: 0;
     margin-top: 1%;
 }
-#turnoSpan{
+
+#turnoSpan {
     color: #FF6584;
 }
-#facilSpan{
+ 
+#facilSpan {
     color: #6C63FF;
 }
 
-.turnos{
-    display: flex;
-    justify-content: space-around;
-}
-.turnos div{
-    display: flex;
-    flex-direction: column;
+.grey {
+    background-color: grey;
 }
 
-.contenedor-medic{
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 10px;
+#filtrados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 300px;
 }
+
+.cartaMedica, #modal{
+    background-color: white;
+    box-shadow: 2px 9px 28px 0px rgba(61,56,56,0.75);
+    -webkit-box-shadow: 2px 9px 28px 0px rgba(61,56,56,0.75);
+    border-radius: 30px;
+    width: 94%;
+    margin: 2%;
+}
+
+#modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 25rem;
+    font-weight: bold;
+    font-size: .8em;
+    padding: 6em;
+    line-height: 3em;
+    text-align: center;
+    z-index: 1;
+    position: fixed;
+}
+
+.hidden {
+    visibility: hidden;
+    /* display: none; */
+}
+
+.opacity {
+    opacity: 0.8;
+}
+
+
+#infoMedico, .turnos{
+    display: flex;
+}
+
+.turnos{
+    justify-content: space-evenly;
+    margin: 4%;
+}
+
+#infoMedico{
+    justify-content: space-between;
+}
+
+#infoMedico h3{
+    font-size: 1em;
+    margin: 2% 5%;
+}
+
+.dia-turno-div {
+    -webkit-box-shadow: 0px 4px 4px 0px rgb(61 56 56 / 47%);
+    border-radius: 20px;
+    text-align: center;
+    width: 28%;
+    height: 30%;
+    margin: 0% .5%;
+    padding-bottom: 2.5%;
+}
+
+.dia-header-pink {
+    background-color: #FF6584;
+    height: 20%;
+}
+
+.dia-header {
+    background-color: grey;
+    height: 20%;
+}
+
+.dia-header p{
+    font-weight: bold;
+}
+
+.dia-header p, .horario p{
+    font-size: .8rem;
+    text-align: center;
+}
+
+.horario{
+    background-color: whitesmoke;
+    border-radius: 20px;
+    margin: -5% 3%;
+}
+
+.blue {
+    background-color: #6C63FF;
+}
+
+

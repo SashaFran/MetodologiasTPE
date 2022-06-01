@@ -1,0 +1,9 @@
+sudo yum update
+
+python3 -m venv test_flask
+pip3 install --upgrade pip
+pip3 install flask
+pip3 install -U flask-cors
+
+------------------------------enCodigo------------------
+CORS(app)

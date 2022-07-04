@@ -1,3 +1,173 @@
+//---------------------------------------------------------------------------
+/*---------- Variables -----------*/
+let medicos = [
+    {
+        "id" : "1",
+        "apellido" : "Perez",
+        "nombre" : "Romina",
+        "especialidad" : "Traumatologia",
+        "obrasSociales" : [
+            "pami",
+            "osde",
+            "osecac",
+            "ioma",
+            "medicus"
+        ],
+        "psw":"12345",
+        "turnos": [
+            {
+                "dia": "Lunes 1 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            },
+            {
+                "dia": "Martes 2 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            },
+            {
+                "dia": "Miercoles 3 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            },
+            {
+                "dia": "Jueves 4 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            },
+            {
+                "dia": "Viernes 5 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            },
+            {
+                "dia": "Lunes 1 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            },
+            {
+                "dia": "Martes 2 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            },
+            {
+                "dia": "Miercoles 3 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            },
+            {
+                "dia": "Jueves 4 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            },
+            {
+                "dia": "Viernes 5 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            },
+            {
+                "dia": "Jueves 4 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            }
+            ]
+    },
+    {
+        "id" : "2", 
+        "apellido" : "Gonzales",
+        "nombre" : "Jorgelina",
+        "especialidad" : "Clinica",
+        "obrasSociales" : [
+            "pami",
+            "osde",
+            "medicus"
+        ],
+        "psw":"12345",
+        "turnos": [
+            {
+            "dia": "Lunes 1 de Junio",
+            "hora1": "8.15",
+            "hora2": "8.30",
+            "hora3": "8.45"
+            },
+            {
+            "dia": "Martes 2 de Junio",
+            "hora1": "8.15",
+            "hora2": "8.30",
+            "hora3": "8.45"
+            },
+            {
+            "dia": "Miercoles 3 de Junio",
+            "hora1": "8.15",
+            "hora2": "8.30",
+            "hora3": "8.45"
+            },
+            {
+            "dia": "Jueves 4 de Junio",
+            "hora1": "8.15",
+            "hora2": "8.30",
+            "hora3": "8.45"
+            },
+            {
+            "dia": "Viernes 5 de Junio",
+            "hora1": "8.15",
+            "hora2": "8.30",
+            "hora3": "8.45"
+            }]
+    },
+    {
+        "id" : "3", 
+        "apellido" : "Anchorena",
+        "nombre" : "Marisol",
+        "especialidad" : "Cirugia nuclear",
+        "obrasSociales" : [],
+        "psw":"12345",
+        "turnos": [
+            {
+                "dia": "Lunes 1 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            },
+            {
+                "dia": "Martes 2 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            },
+            {
+                "dia": "Miercoles 3 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            },
+            {
+                "dia": "Jueves 4 de Junio",
+                "hora1": "8.15",
+                "hora2": "8.30",
+                "hora3": "8.45"
+            },
+            {
+            "dia": "Viernes 5 de Junio",
+            "hora1": "8.15",
+            "hora2": "8.30",
+            "hora3": "8.45"
+            },
+        ]
+    }
+];
+//-----------------------------------------------------------------------------------
 let btnPaciente = document.getElementById("btn_pacientes");
 let btnInstitucional = document.getElementById("btn_institucional");
 
@@ -29,6 +199,7 @@ btnPaciente.addEventListener("click", function(){
     }
 
 })
+
 
 btnInstitucional.addEventListener("click", function(){
     if(window.getComputedStyle(containerPaciente).visibility === "visible"){
@@ -62,6 +233,11 @@ btnIngresarMedicos.addEventListener('click', e => {
     }else{
         console.log("Medico no encontrado")
     }
-
-
 })
+function login(user,pass){
+    let medico =medicos.filter(medico => medico.apellido == user && medico.psw == pass )
+    if (medico.length > 0 ){
+    let select = medico[0].id
+        return select
+    }
+}

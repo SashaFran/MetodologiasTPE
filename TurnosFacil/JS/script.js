@@ -231,7 +231,8 @@ btnIngresarMedicos.addEventListener('click', e => {
         localStorage.setItem('id', select);
         window.location.href = './template-medico/index.html';
     }else{
-        console.log("Medico no encontrado")
+        console.log("Medico no encontrado");
+        alert("Medico no encontrado");
     }
 })
 function login(user,pass){
